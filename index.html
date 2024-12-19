@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigmaService</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- Header section start -->
+    <header>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="./assets/images/logo.png" alt="">
+            </div>
+            <nav>
+                <ul class="header-nav_menu">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="tel:+998977171118">+99897 717 11 18</a></li>
+                    <li>
+                        <a href="tel:+998977171118" class="btn btn-primary">
+                            <span>Вызвать мастера</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </li>
+                </ul>
+                <button class="btn btn-menu" id="btn-menu">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </nav>
+        </div>
+        <ul class="header-nav_content" id="header-nav_content">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="tel:+998977171118">+99897 717 11 18</a></li>
+        </ul>
+    </header>
+    <!-- Header section end -->
+
+
+    <!-- Main section start -->
+    <section class="main">
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide slide-1">
+                    <div class="backdrop">
+                        <div class="swiper-content container">
+                            <div class="main-title">
+                                <p>// Ремонт автомобилей //</p>
+                                <h1>
+                                    Ремонт автомобиля в рассрочку
+                                </h1>
+                                <button class="btn btn-primary">
+                                    <span>Узнать больше</span>
+                                    <i class='bx bx-right-arrow-alt'></i>
+                                </button>
+                            </div>
+                            <div class="main-image">
+                                <img src="./assets/images/carousel-1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-2">
+                    <div class="backdrop">
+                        <div class="swiper-content container">
+                            <div class="main-title">
+                                <p>// Ремонт автомобилей //</p>
+                                <h1>
+                                    Автозапчасти лучшего качества
+                                </h1>
+                                <button class="btn btn-primary">
+                                    <span>Узнать больше</span>
+                                    <i class='bx bx-right-arrow-alt'></i>
+                                </button>
+                            </div>
+                            <div class="main-image">
+                                <img src="./assets/images/carousel-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-3">
+                    <div class="backdrop">
+                        <div class="swiper-content container">
+                            <div class="main-title">
+                                <p>// Ремонт автомобилей //</p>
+                                <h1>
+                                    Помощь на дороге
+                                </h1>
+                                <button class="btn btn-primary">
+                                    <span>Узнать больше</span>
+                                    <i class='bx bx-right-arrow-alt'></i>
+                                </button>
+                            </div>
+                            <div class="main-image">
+                                <img src="./assets/images/carousel-3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+    </section>
+    <!-- Main section end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 5000
+            },
+            loop: true,
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+</body>
+
+</html>
