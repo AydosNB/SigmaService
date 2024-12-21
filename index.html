@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SigmaService</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/fonts/Ubuntu/stylesheet.css">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,71 +49,11 @@
     </header>
     <!-- Header section end -->
 
-
     <!-- Main section start -->
     <section class="main">
-        <!-- Slider main container -->
         <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide slide-1">
-                    <div class="backdrop">
-                        <div class="swiper-content container">
-                            <div class="main-title">
-                                <p>// Ремонт автомобилей //</p>
-                                <h1>
-                                    Ремонт автомобиля в рассрочку
-                                </h1>
-                                <button class="btn btn-primary">
-                                    <span>Узнать больше</span>
-                                    <i class='bx bx-right-arrow-alt'></i>
-                                </button>
-                            </div>
-                            <div class="main-image">
-                                <img src="./assets/images/carousel-1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide slide-2">
-                    <div class="backdrop">
-                        <div class="swiper-content container">
-                            <div class="main-title">
-                                <p>// Ремонт автомобилей //</p>
-                                <h1>
-                                    Автозапчасти лучшего качества
-                                </h1>
-                                <button class="btn btn-primary">
-                                    <span>Узнать больше</span>
-                                    <i class='bx bx-right-arrow-alt'></i>
-                                </button>
-                            </div>
-                            <div class="main-image">
-                                <img src="./assets/images/carousel-2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide slide-3">
-                    <div class="backdrop">
-                        <div class="swiper-content container">
-                            <div class="main-title">
-                                <p>// Ремонт автомобилей //</p>
-                                <h1>
-                                    Помощь на дороге
-                                </h1>
-                                <button class="btn btn-primary">
-                                    <span>Узнать больше</span>
-                                    <i class='bx bx-right-arrow-alt'></i>
-                                </button>
-                            </div>
-                            <div class="main-image">
-                                <img src="./assets/images/carousel-3.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="swiper-wrapper" id="swiper-wrapper">
+                <!-- Slides content rendered -->
             </div>
 
             <!-- If we need navigation buttons -->
@@ -122,23 +64,16 @@
     </section>
     <!-- Main section end -->
 
+
+    <!-- Services section start -->
+     
+    <!-- Services section end -->
+
+    
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            autoplay: {
-                delay: 5000
-            },
-            loop: true,
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
-
 </body>
 
 </html>
