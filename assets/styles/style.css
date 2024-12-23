@@ -38,7 +38,7 @@ hr{
 
 :root {
     /* == colors == */
-    --primary-color: #D81324;
+    --primary-color: #df0000;
     --primary-color-hover: #bc1220;
     --secondary-color: #0B2154;
     --text-dark-color: #111111;
@@ -596,7 +596,7 @@ header.header-fixed {
 
 
 .services-tab {
-    padding-top: 70px;
+    padding-top: 80px;
     margin-bottom: 40px;
 }
 
@@ -666,7 +666,46 @@ header.header-fixed {
    margin-top: 20px;
 }
 
+/* ===========================
+        9. Contact section 
+   =========================== */
 
+.contact {
+    padding-top: 70px;
+    margin-bottom: 20px;
+}
+
+.contact .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact .contact-content .contact-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact .contact-content .contact-cards .contact-card {
+    padding: 30px 30px;
+    width: 100%;
+    background-color: #eaeaea;
+}
+
+.contact .contact-content .contact-cards .contact-card .email-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-gray-color);
+    margin-top: 10px;
+}
+
+.contact .contact-content .contact-cards .contact-card .email-card i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
 
 /* ===========================
          Responsive Design 
@@ -761,6 +800,10 @@ header.header-fixed {
     }
 
     .services-tab .services-tab-content .services-right {
+        flex-direction: column;
+    }
+
+    .contact .contact-content .contact-cards {
         flex-direction: column;
     }
 }
