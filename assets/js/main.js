@@ -7,6 +7,8 @@ const counterElements = document.querySelectorAll("#counter")
 const infoContent = document.querySelector("#info-content")
 const btnArrow = document.querySelector("#btn-arrow")
 const navigateBtns = navContent.querySelectorAll("a")
+const servicesLeft = document.querySelector("#services-left")
+const servicesRight = document.querySelector("#services-right")
 
 function activeNavigate() {
     navContent.classList.toggle("active")
@@ -187,10 +189,125 @@ function renderCounter(element, maxCount) {
     }, 70)
 }
 
+function renderServicesTab() {
+    const servicesButtonsData = [
+        {
+            id: 1,
+            image: "./assets/images/icons/svg-1.svg",
+            title: "Диагностика"
+        },
+        {
+            id: 2,
+            image: "./assets/images/icons/svg-7.svg",
+            title: "Обслуживание Двигателя"
+        },
+        {
+            id: 3,
+            image: "./assets/images/icons/svg-3.svg",
+            title: "Замена Шин"
+        },
+        {
+            id: 4,
+            image: "./assets/images/icons/svg-4.svg",
+            title: "Замена Масла"
+        }
+    ]
+
+    const servicesContentData = [
+        {
+            id: 1,
+            image: "./assets/images/service-1.jpg",
+            title: "15 Лет Опытa в Автосервисе",
+            description: "Мы предоставляем высококачественные услуги по диагностике вашего автомобиля, используя самые современные технологии и оборудование"
+        },
+        {
+            id: 2,
+            image: "./assets/images/service-2.jpg",
+            title: "15 Лет Опытa в Автосервисе",
+            description: "Наши специалисты готовы предложить вам комплексное обслуживание двигателя, чтобы ваш автомобиль всегда работал на максимальной производительности."
+        },
+        {
+            id: 3,
+            image: "./assets/images/service-3.jpg",
+            title: "15 Лет Опытa в Автосервисе",
+            description: "Мы предлагаем профессиональную замену шин, чтобы ваш автомобиль был безопасен на дороге при любых погодных условиях."
+        },
+        {
+            id: 4,
+            image: "./assets/images/service-4.jpg",
+            title: "15 Лет Опытa в Автосервисе",
+            description: "Мы предлагаем быструю и качественную замену масла, чтобы ваш двигатель работал плавно и эффективно"
+        }
+    ]
+    servicesLeft.innerHTML = ""
+    servicesRight.innerHTML = ""
+    servicesButtonsData.forEach(item => {
+        servicesLeft.innerHTML += `
+                    <button class="btn btn-services ${item.id == 1 ? "serv-btn-active" : ""}" data-id="${item.id}">
+                        <img src=${item.image} alt="">
+                        <span>${item.title}</span>
+                    </button>        
+        `
+    })
+    function slideServices(count) {
+        servicesContentData.forEach(item => {
+            if (item.id == count) {
+                servicesRight.innerHTML = `
+                        <div class="services-right" data-aos="fade-up" data-aos-delay="100">
+                            <div class="services-right-image">
+                                <img src=${item.image} alt="">
+                            </div>
+                            <div class="services-right-title">
+                                <h3>${item.title}</h3>
+                                <p>
+                                    ${item.description}
+                                </p>
+                                <div class="services-check">
+                                    <i class='bx bx-check'></i>
+                                    <span>Качественное Обслуживание</span>
+                                </div>
+                                <div class="services-check">
+                                    <i class='bx bx-check'></i>
+                                    <span>Качественное Обслуживание</span>
+                                </div>
+                                <div class="services-check">
+                                    <i class='bx bx-check'></i>
+                                    <span>Качественное Обслуживание</span>
+                                </div>
+                                <div class="services-btn">
+                                    <a href="tel:+998977171118" class="btn btn-primary">
+                                        <span>Позвонить</span>
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>        
+            `
+            }
+        })
+    }
+    slideServices(1)
+    const servButtons = servicesLeft.querySelectorAll("button")
+
+    servButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            servButtons.forEach(item => {
+                if (item.dataset.id == btn.dataset.id) {
+                    item.classList.add("serv-btn-active")
+                    slideServices(item.dataset.id)
+                } else {
+                    item.classList.remove("serv-btn-active")
+                }
+            })
+        })
+    })
+}
+
 
 
 renderMainPage()
 renderServicesPage()
+renderServicesTab()
 
 
 const observerCount = new IntersectionObserver((entries, observer) => {

@@ -160,6 +160,41 @@ hr{
     transform: scale(1);
 }
 
+.btn-services {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    background-color: #e2dfe0de;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 3px;
+    text-align: start;
+    transition: .3s ease;
+}
+
+.btn-services img {
+    width: 40px;
+    height: 40px;
+}
+
+.btn-services.serv-btn-active img {
+    filter: brightness(0) invert(1);
+}
+
+.btn-services:hover {
+    background-color: #c5c5c5c5;
+}
+.btn-services:active {
+    transform: scale(0.95);
+}
+
+.btn-services.serv-btn-active {
+    color: white;
+    background-color: var(--primary-color);
+}
+
 .section-header-title {
     text-align: center;
 }
@@ -555,6 +590,81 @@ header.header-fixed {
     margin-bottom: 10px;
 }
 
+/* ===========================
+        8. Services-tab section 
+   =========================== */
+
+
+.services-tab {
+    padding-top: 70px;
+    margin-bottom: 40px;
+}
+
+.services-tab .services-tab-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.services-tab .services-tab-content .services-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+
+
+.services-tab .services-tab-content .services-right {
+    flex: 2.5;
+    display: flex;
+    gap: 20px;
+}
+
+.services-tab .services-tab-content .services-right .services-right-image {
+    flex: 1;
+}
+
+.services-tab .services-tab-content .services-right .services-right-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    max-height: 400px;
+}
+
+.services-tab .services-tab-content .services-right .services-right-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1.5;
+}
+
+.services-tab .services-tab-content .services-right .services-right-title h3 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.services-tab .services-tab-content .services-right .services-right-title p {
+    color: var(--text-gray-color);
+    margin-bottom: 20px;
+}
+
+.services-tab .services-tab-content .services-right .services-right-title .services-check {
+    display: flex;
+    align-items: center;
+    color: var(--text-gray-color);
+}
+
+.services-tab .services-tab-content .services-right .services-right-title .services-check i{
+    font-size: 25px;
+    color: green;
+}
+
+.services-tab .services-tab-content .services-right .services-right-title .services-btn {
+   margin-top: 20px;
+}
 
 
 
@@ -601,6 +711,10 @@ header.header-fixed {
     .about .about-content .about-image img{
         height: 300px;
     }
+
+    .services-tab .services-tab-content {
+        flex-direction: column;
+    }
 }
 
 @media (max-width : 800px) {
@@ -644,6 +758,10 @@ header.header-fixed {
     .info .info-content {
         grid-template-columns: repeat(2, 1fr);
         
+    }
+
+    .services-tab .services-tab-content .services-right {
+        flex-direction: column;
     }
 }
 
