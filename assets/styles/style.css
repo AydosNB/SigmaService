@@ -27,6 +27,13 @@ ol {
 a {
     text-decoration: none;
     color: inherit;
+    width: max-content;
+}
+
+hr{
+    border: none;
+    border-bottom: 1px solid;
+    border-color: rgb(234, 234, 234);
 }
 
 :root {
@@ -122,6 +129,53 @@ a {
     background-color: rgba(229, 229, 229, 0.257);
 }
 
+.btn-arrow {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 3px;
+    transition: .2s ease;
+    position: fixed;
+    bottom: -100px;
+    right: 20px;
+    z-index: 15;
+}
+
+.btn-arrow.active-btn {
+    bottom: 20px;
+    right: 20px;
+}
+
+.btn-arrow:hover {
+    background-color: red;
+    transform: scale(1.1);
+}
+
+.btn-arrow:active {
+    transform: scale(1);
+}
+
+.section-header-title {
+    text-align: center;
+}
+
+.section-header-title p {
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+
+.section-header-title h2 {
+    font-size: 35px;
+}
+
 .swiper {
     width: 100%;
     height: calc(100vh - 65px);
@@ -163,10 +217,20 @@ a {
 
 .swiper-button-prev {
     color: rgba(182, 182, 182, 0.454) !important;
+    padding-left: 1%;
 }
 
 .swiper-button-next {
     color: rgba(182, 182, 182, 0.454) !important;
+    padding-right: 1%;
+}
+
+.swiper-button-prev:hover {
+    color: rgba(204, 203, 203, 0.766) !important;
+}
+
+.swiper-button-next:hover {
+    color: rgba(204, 203, 203, 0.766) !important;
 }
 
 .swiper-slide.slide-1 {
@@ -184,12 +248,22 @@ a {
 }
 
 
+
 /* ===========================
         4. Header section 
    =========================== */
 
 header {
     box-shadow: 0px 7px 54px 0px rgba(0, 0, 0, 0.31);
+    transition: .3s ease-in-out;
+}
+
+header.header-fixed {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
 }
 
 .header-content {
@@ -253,7 +327,7 @@ header {
    =========================== */
 
 .main {
-    margin-bottom: 10px;
+    padding-top: 50px;
 }
 
 .main .swiper-content {
@@ -287,6 +361,204 @@ header {
 }
 
 /* ===========================
+        6. Services section 
+   =========================== */
+
+.services {
+    margin: 10px 0;
+}
+
+.services .services-cards {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minMax(300px,1fr));
+    gap: 20px;
+}
+
+.services .services-cards .service-card {
+    padding: 35px 40px;
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    transition: 0.2s ease-in;
+}
+.services .services-cards .service-card:hover {
+    background-color: rgb(230, 224, 224);
+}
+
+.services .services-cards .service-card img {
+    width: 40px;
+    height: 40px;
+}
+
+/* ===========================
+        7. About section 
+   =========================== */
+
+.about {
+    margin: 20px 0;
+    padding-top: 80px;
+}
+
+.about .about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.about .about-content > div {
+    flex: 1;
+}
+
+.about .about-content .about-image {
+    position: relative;
+}
+
+.about .about-content .about-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.about .about-content .about-image .about-image-title {
+    width: 120px;
+    height: 120px;
+    background-color: #5151513d;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    flex-direction: column;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.about .about-content .about-image .about-image-title span  {
+    text-shadow: 2px 2px 2px rgba(22, 22, 22, 0.3);
+}
+
+.about .about-content .about-image .about-image-title span .year-count {
+    font-size: 40px;
+}
+
+.about .about-content .about-title p.header-text {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.about .about-content .about-title h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.about .about-content .about-title h2 span {
+    color: var(--primary-color);
+}
+
+.about .about-content .about-title p {
+    color: var(--text-gray-color);
+}
+
+.about .about-content .about-title .about-cards {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about .about-content .about-title .about-btn {
+    margin-top: 30px;
+}
+
+.about .about-content .about-title .about-cards .about-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.about .about-content .about-title .about-cards .about-card h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.about .about-content .about-title .about-cards .about-card .card-count {
+    height: 35px;
+    width: 40px;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ===========================
+        8. Info section 
+   =========================== */
+.info {
+    margin: 20px 0;
+    background-image: url("../images/car2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.722);
+}
+
+.info .info-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 60px 0;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.info .info-content .info-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.info .info-content .info-card h4{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* ===========================
          Responsive Design 
    =========================== */
 
@@ -312,6 +584,22 @@ header {
     
     .main .swiper-content .main-title h1 {
         font-size: 52px;
+    }
+
+    .section-header-title p {
+        font-size: 16px;
+    }
+    
+    .section-header-title h2 {
+        font-size: 25px;
+    }
+
+    .about .about-content {
+        flex-direction: column;
+    }
+
+    .about .about-content .about-image img{
+        height: 300px;
     }
 }
 
@@ -352,6 +640,11 @@ header {
     .main .swiper-content .main-image {
         display: none;
     }
+
+    .info .info-content {
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
 }
 
 @media (max-width : 428px) {
@@ -359,5 +652,10 @@ header {
         width: 100%;
         height: 500px;
         max-height: 1000px;
+    }
+
+    .info .info-content {
+        grid-template-columns: repeat(1, 1fr);
+        
     }
 }
