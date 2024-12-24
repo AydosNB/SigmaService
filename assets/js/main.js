@@ -138,7 +138,7 @@ function renderServicesPage() {
         },
         {
             id: 13,
-            image: "./assets/images/icons/vector.svg",
+            image: "./assets/images/icons/Vector.svg",
             title: "Токарная услуга"
         },
         {
