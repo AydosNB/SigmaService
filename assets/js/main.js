@@ -59,10 +59,10 @@ function renderMainPage() {
                     <h1 class="home-text-animate" style="transition-delay: 300ms;">
                         ${item.title}
                     </h1>
-                    <button class="btn btn-primary home-text-animate" style="transition-delay: 500ms;">
+                    <a href="tel:+998977387275" class="btn btn-primary home-text-animate" style="transition-delay: 500ms;">
                         <span>Узнать больше</span>
                         <i class='bx bx-right-arrow-alt'></i>
-                    </button>
+                    </a>
                 </div>
             <div class="main-image">
                 <img class="home-image-animate" src=${item.image} alt="">

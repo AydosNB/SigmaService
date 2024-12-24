@@ -708,6 +708,110 @@ header.header-fixed {
 }
 
 /* ===========================
+        10. Footer section 
+   =========================== */
+
+.footer {
+    padding-top: 70px;
+    padding-bottom: 40px;
+    background: url("../images/carousel-bg-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000db;
+}
+
+.footer .footer-content {
+    color: white;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.footer .footer-content .footer-card h3{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer .footer-content .footer-card .footer-card-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer .footer-content .footer-card .footer-card-cont span {
+    line-height: 20px;
+}
+
+.footer .footer-content .footer-card .footer-card-cont .footer-call {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer .footer-content .footer-card .footer-card-cont .footer-call a{
+    color: var(--primary-color);
+}
+
+.footer .footer-content .footer-card .footer-card-cont .network {
+    display: flex;
+    gap: 10px;
+}
+
+.footer .footer-content .footer-card .footer-card-cont .network a {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease;
+}
+
+.footer .footer-content .footer-card .footer-card-cont .network a:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+}
+
+.footer .footer-content .footer-card .footer-card-cont .footer-nav {
+    margin: 5px 0;
+}
+
+.footer .footer-content .footer-card .footer-card-cont .footer-nav a:hover {
+    transition: .5s ease;
+    letter-spacing: 1px;
+}
+.footer .footer-hr {
+    position: relative;
+    height: 1px;
+    background-color: #e7e3e345;
+    margin: 20px 0;
+    z-index: 5;
+}
+
+.footer .footer-text {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 6;
+}
+
+/* ===========================
          Responsive Design 
    =========================== */
 
@@ -753,6 +857,11 @@ header.header-fixed {
 
     .services-tab .services-tab-content {
         flex-direction: column;
+    }
+
+    .footer .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        
     }
 }
 
@@ -805,6 +914,12 @@ header.header-fixed {
 
     .contact .contact-content .contact-cards {
         flex-direction: column;
+    }
+
+    .footer .footer-content {
+        gap: 30px;
+        grid-template-columns: repeat(1, 1fr);
+        
     }
 }
 
