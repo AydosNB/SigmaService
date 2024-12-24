@@ -530,7 +530,7 @@ header.header-fixed {
 
 .about .about-content .about-title .about-cards .about-card .card-count {
     height: 35px;
-    width: 40px;
+    min-width: 36px;
     background-color: #eaeaea;
     display: flex;
     justify-content: center;
